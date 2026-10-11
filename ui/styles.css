@@ -1,0 +1,99 @@
+/* Blue + slate palette. Streamlit's native widget colors live in
+   .streamlit/config.toml; this file styles the surrounding layout. */
+:root {
+    --ui-blue: #3563a8;
+    --ui-ink: #243449;
+    --ui-muted: #5c6d82;
+    --ui-border: #dce4ef;
+    --ui-surface: #ffffff;
+}
+
+[data-testid="stAppViewContainer"] {
+    background: linear-gradient(145deg, #f4f7fb 0%, #edf2f8 100%);
+}
+
+[data-testid="stHeader"] {
+    background: #f4f7fb;
+}
+
+[data-testid="stSidebar"] {
+    background: #e8eef6;
+    border-right: 1px solid var(--ui-border);
+}
+
+[data-testid="stMainBlockContainer"] {
+    max-width: 1400px;
+}
+
+h1, h2, h3 {
+    color: var(--ui-ink);
+    letter-spacing: -0.025em;
+}
+
+[data-testid="stCaptionContainer"] {
+    color: var(--ui-muted);
+}
+
+[data-testid="stForm"],
+[data-testid="stVerticalBlockBorderWrapper"] > div {
+    border-color: var(--ui-border);
+    border-radius: 16px;
+    background: var(--ui-surface);
+}
+
+[data-testid="stMetric"] {
+    background: var(--ui-surface);
+    border: 1px solid var(--ui-border);
+    border-top: 3px solid #7999c8;
+    border-radius: 14px;
+    padding: 18px 20px;
+    box-shadow: 0 4px 16px rgb(36 52 73 / 4%);
+}
+
+[data-testid="stMetricValue"] {
+    color: var(--ui-blue);
+}
+
+[data-baseweb="tab-list"] {
+    gap: 8px;
+    border-bottom: 1px solid var(--ui-border);
+    padding-bottom: 8px;
+}
+
+[data-baseweb="tab"] {
+    border-radius: 10px;
+    padding: 10px 16px;
+    color: var(--ui-muted);
+}
+
+[data-baseweb="tab"][aria-selected="true"] {
+    background: #dfe9f8;
+    color: #264e87;
+    font-weight: 600;
+}
+
+[data-testid="stButton"] button,
+[data-testid="stFormSubmitButton"] button,
+[data-testid="stDownloadButton"] button {
+    border-radius: 10px;
+    min-height: 44px;
+    font-weight: 600;
+}
+
+[data-testid="stButton"] button:focus-visible,
+[data-testid="stFormSubmitButton"] button:focus-visible,
+[data-testid="stDownloadButton"] button:focus-visible,
+[data-baseweb="tab"]:focus-visible {
+    outline: 3px solid #7999c8;
+    outline-offset: 3px;
+}
+
+[data-testid="stExpander"], [data-testid="stDataFrame"] {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+@media (max-width: 640px) {
+    [data-baseweb="tab"] { padding: 10px 12px; }
+    [data-testid="stMetric"] { padding: 14px; }
+}
